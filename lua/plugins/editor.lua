@@ -22,7 +22,7 @@ return {
           local builtin = require("telescope.builtin")
           builtin.find_files({
             no_ignore = false,
-            hidden = true,
+            hidden = false, -- Change
           })
         end,
         desc = "Lists files in your current working directory, respects .gitignore",
@@ -145,4 +145,3 @@ return {
     end,
   },
 }
-
