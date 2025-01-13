@@ -3,7 +3,10 @@ return {
     "nvim-treesitter/nvim-treesitter",
     tag = "v0.9.1",
     opts = {
+      ignore_install = { "xml", "printf" }, -- Root Cause of Problem
       ensure_installed = {
+        "c",
+        "cpp",
         "javascript",
         "typescript",
         "css",
