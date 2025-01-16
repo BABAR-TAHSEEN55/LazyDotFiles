@@ -127,6 +127,12 @@ return {
       setup = {},
     },
   },
+
+  {
+    "imsnif/kdl.vim",
+    ft = "kdl",
+  },
+
   {
     "nvim-cmp",
     dependencies = { "hrsh7th/cmp-emoji" },
