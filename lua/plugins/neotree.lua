@@ -10,6 +10,9 @@ return {
         },
       },
     },
+    window = {
+      position = "right", -- Move Neo-tree to the right side
+    },
   },
   config = function(_, opts)
     require("neo-tree").setup(opts)
