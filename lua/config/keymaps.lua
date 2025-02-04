@@ -4,7 +4,10 @@
 --
 --
 --
---
+local discipline = require("craftzdog.discipline")
+
+discipline.cowboy()
+
 --TODO: Learn the Keymaps
 local keymap = vim.keymap
 local opts = { noremap = true, silent = true }
