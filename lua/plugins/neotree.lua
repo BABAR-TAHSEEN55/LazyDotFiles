@@ -11,7 +11,14 @@ return {
       },
     },
     window = {
-      position = "right", -- Move Neo-tree to the right side
+      position = "float", -- Set Neo-tree to float
+      popup = { -- Customize floating window appearance
+        size = {
+          height = 0.8, -- 80% of screen height
+          width = 0.8, -- 60% of screen width
+        },
+        border = "rounded", -- Optional: 'rounded', 'single', 'double', 'shadow'
+      },
     },
   },
   config = function(_, opts)
