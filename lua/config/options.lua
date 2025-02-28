@@ -32,7 +32,6 @@ vim.opt.splitkeep = "cursor"
 vim.opt.mouse = ""
 
 vim.opt.conceallevel = 2 -- Enable concealment
-vim.opt.concealcursor = "" -- Show conceal in all modes (Normal, Insert, Visual)
 vim.opt.termguicolors = true
 -- Add asterisks in block comments
 vim.opt.formatoptions:append({ "r" })

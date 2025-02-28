@@ -63,6 +63,7 @@ return {
     "rcarriga/nvim-notify",
     opts = {
       timeout = 5000,
+      background_colour = "#1E1E1E", -- Change this to any color you prefer
     },
   },
   {
