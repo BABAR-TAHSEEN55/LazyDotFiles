@@ -11,7 +11,7 @@ return {
       },
     },
     window = {
-      position = "float", -- Set Neo-tree to float
+      position = "right", -- Move Neo-tree to the right side
       popup = { -- Customize floating window appearance
         size = {
           height = 0.8, -- 80% of screen height

@@ -1,11 +1,14 @@
 return {
+  -- Mini Hipatterns
   {
     "echasnovski/mini.hipatterns",
     event = "BufReadPre",
     opts = {},
   },
+
+  -- Telescope Plugin (Main)
   {
-    "telescope.nvim",
+    "nvim-telescope/telescope.nvim", -- Ensure Telescope is installed
     priority = 1000,
     dependencies = {
       {
@@ -13,13 +16,13 @@ return {
         build = "make",
       },
       "nvim-telescope/telescope-file-browser.nvim",
+      "nvim-lua/plenary.nvim", -- Required dependency
     },
     keys = {
       {
         ";f",
         function()
-          local builtin = require("telescope.builtin")
-          builtin.find_files({
+          require("telescope.builtin").find_files({
             no_ignore = false,
             hidden = false,
           })
@@ -29,40 +32,35 @@ return {
       {
         ";r",
         function()
-          local builtin = require("telescope.builtin")
-          builtin.live_grep()
+          require("telescope.builtin").live_grep()
         end,
         desc = "Search for a string in your current working directory and get results live as you type, respects .gitignore",
       },
       {
         "\\\\",
         function()
-          local builtin = require("telescope.builtin")
-          builtin.buffers()
+          require("telescope.builtin").buffers()
         end,
         desc = "Lists open buffers",
       },
       {
         ";;",
         function()
-          local builtin = require("telescope.builtin")
-          builtin.resume()
+          require("telescope.builtin").resume()
         end,
         desc = "Resume the previous telescope picker",
       },
       {
         ";e",
         function()
-          local builtin = require("telescope.builtin")
-          builtin.diagnostics()
+          require("telescope.builtin").diagnostics()
         end,
         desc = "Lists Diagnostics for all open buffers or a specific buffer",
       },
       {
         ";s",
         function()
-          local builtin = require("telescope.builtin")
-          builtin.treesitter()
+          require("telescope.builtin").treesitter()
         end,
         desc = "Lists Function names, variables, from Treesitter",
       },
@@ -92,9 +90,9 @@ return {
     config = function()
       local telescope = require("telescope")
       local actions = require("telescope.actions")
-      local fb_actions = telescope.extensions.file_browser.actions
+      local fb_actions = require("telescope").extensions.file_browser.actions
 
-      local config = {
+      telescope.setup({
         defaults = {
           wrap_results = true,
           layout_strategy = "horizontal",
@@ -136,9 +134,8 @@ return {
             },
           },
         },
-      }
+      })
 
-      telescope.setup(config)
       telescope.load_extension("fzf")
       telescope.load_extension("file_browser")
     end,
